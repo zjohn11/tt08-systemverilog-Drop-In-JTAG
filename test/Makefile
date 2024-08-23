@@ -3,9 +3,9 @@
 
 # defaults
 SIM ?= icarus
-TOPLEVEL_LANG ?= verilog
+TOPLEVEL_LANG ?= systemverilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = project.sv bsr.sv bypass_register.sv defines.sv device_indentification_register.sv instruction_register.sv jtag_test_logic.sv riscv_pipelined.sv tap_controller.sv tt_um_jtag_top.sv
 
 ifneq ($(GATES),yes)
 
