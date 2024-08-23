@@ -30,19 +30,19 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: "tdi[0]"
-  ui[1]: "tms[1]"
-  ui[2]: "sysclk[2]"
-  ui[3]: "sys_reset[3]"
+  ui[0]: "tdi"
+  ui[1]: "tms"
+  ui[2]: "sysclk"
+  ui[3]: "sys_reset"
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: "tdo[0]"
-  uo[1]: "success[1]"
-  uo[2]: "fail[2]"
+  uo[0]: "tdo"
+  uo[1]: "success"
+  uo[2]: "fail"
   uo[3]: ""
   uo[4]: ""
   uo[5]: ""
