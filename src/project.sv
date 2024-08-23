@@ -22,6 +22,19 @@ module tt_um_example (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+    wire _unused = &{ena, ui_in[7:4], uio_in[7:0], 1'b0};
+
+    tt_um_jtag_top top(
+        .tck(clk),
+        .tdi(ui_in[0]),
+        .tms(ui_in[1]),
+        .trst(rst_n),
+        .tdo(uo_out[0]),
+        .sysclk(ui_in[2]),
+        .sys_reset(ui_in[3]),
+        .success(uo_out[1]),
+        .fail(uo_out[2])
+    );
+        
 
 endmodule
