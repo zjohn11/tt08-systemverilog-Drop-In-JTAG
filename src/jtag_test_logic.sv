@@ -25,6 +25,7 @@ logic captureDR;
 logic clk_dr;
 logic updateDRstate;
 logic select;
+logic updateDR;
 
 // instruction signals
 logic [`INST_COUNT-1:0] instructions;
