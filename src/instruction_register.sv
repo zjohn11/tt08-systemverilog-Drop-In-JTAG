@@ -19,12 +19,12 @@ assign tdo = shift_reg[0];
 
 // Shift register
 always @(posedge tck_ir) begin
+    shift_reg[`INST_REG_WIDTH] <= tdi;
     shift_reg[0] <= shift_reg[1] || captureIR;  // 7.1.1 (d)
 end
 genvar i;
 for (i = `INST_REG_WIDTH; i > 1; i = i - 1) begin
     always @(posedge tck_ir) begin
-        shift_reg[`INST_REG_WIDTH] <= tdi;
         shift_reg[i-1] <= shift_reg[i] && ~captureIR;  // 7.1.1 (e)
     end
 end
