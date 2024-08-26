@@ -25,7 +25,7 @@ genvar i;
 for (i = `INST_REG_WIDTH; i > 1; i = i - 1) begin
     always @(posedge tck_ir) begin
         if (i == `INST_REG_WIDTH)
-            shift_reg[`INST_REG_WIDTH] <= tdi;
+            shift_reg[i] <= tdi;
         else
             shift_reg[i-1] <= shift_reg[i] && ~captureIR;  // 7.1.1 (e)
     end
