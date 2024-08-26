@@ -11,12 +11,12 @@ module device_identification_register (
 
 localparam device_id = `DEVICE_ID;
 logic [32:0] shift_reg;
-assign shift_reg[32] = tdi;
 assign tdo = shift_reg[0];
 
 genvar i;
 for (i = 0; i < 32; i = i + 1) begin
     always @(posedge clockDR) begin
+        shift_reg[32] <= tdi;
         shift_reg[i] <= captureDR ? device_id[i] : shift_reg[i+1];
     end
 end
