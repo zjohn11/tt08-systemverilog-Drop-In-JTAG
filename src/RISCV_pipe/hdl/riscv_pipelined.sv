@@ -81,6 +81,7 @@
 //   sw           0100011   010       immediate
 //   jal          1101111   immediate immediate
 
+/*
 module riscv_testbench();
 
    logic        clk;
@@ -125,7 +126,7 @@ module riscv_testbench();
   end
      end
 endmodule
-
+*/
 module riscv_top(input  logic        clk, reset, 
            output logic [31:0] WriteDataM, DataAdrM, 
            output logic        MemWriteM);
