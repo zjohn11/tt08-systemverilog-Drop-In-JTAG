@@ -25,7 +25,7 @@ project:
     - "RTL/instruction_register.sv"
     - "RTL/jtag_test_logic.sv"
     - "RTL/tap_controller.sv"
-    - "RISCV_pipe/riscv_pipelined.sv"
+    - "RISCV_pipe/hdl/riscv_pipelined.sv"
     - "RTL/tt_um_jtag_top.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
