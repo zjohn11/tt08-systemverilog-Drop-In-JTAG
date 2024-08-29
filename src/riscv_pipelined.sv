@@ -95,8 +95,8 @@ module riscv_testbench();
    initial
      begin
   //string memfilename;
-         memfilename = {"../riscvtest/riscvtest.memfile"};
-  $readmemh(memfilename, dut.imem.RAM);
+         //memfilename = {"../riscvtest/riscvtest.memfile"};
+  $readmemh({"../riscvtest/riscvtest.memfile"}, dut.imem.RAM);
      end
    
    // initialize test
