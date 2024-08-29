@@ -14,7 +14,7 @@ module tt_um_jtag_top #(parameter IMEM_INIT_FILE="../riscvtest/riscvtest.mem") (
     (* mark_debug = "true" *) output logic success, fail  // PHY DEBUG
 );
 
-logic [8:0] bsr_chain;
+    logic [6:0] bsr_chain;
 
 logic bsr_tdi, bsr_clk, bsr_update, bsr_shift, bsr_mode, bsr_tdo;
 
