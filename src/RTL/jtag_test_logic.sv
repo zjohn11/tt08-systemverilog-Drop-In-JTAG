@@ -26,7 +26,7 @@ logic clk_dr;
 logic updateDRstate;
 logic select;
 logic updateDR;
-wire unused = &{shiftIR, updateDRstate, 1'b0}
+wire unused = &{shiftIR, updateDRstate, 1'b0};
 
 // instruction signals
 logic [`INST_COUNT-1:0] instructions;
