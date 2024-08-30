@@ -202,6 +202,10 @@ always @(posedge sys_clk, negedge dbg_rst) begin
                 clk_en <= 0;
                 debug_state <= DBGHALT;
             end
+
+            default: begin
+                //for gds purpose only
+            end
         endcase
     end
 end
