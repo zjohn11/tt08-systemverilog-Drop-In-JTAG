@@ -530,6 +530,7 @@ module imem #(parameter MEM_INIT_FILE)
      output logic [31:0] rd);
    
    logic [31:0]      RAM[63:0];
+   wire unused = &{a[1:0], 1'b0};
 
    initial begin
       if (MEM_INIT_FILE != "") begin
@@ -546,6 +547,7 @@ module dmem (input  logic        clk, we,
        output logic [31:0] rd);
    
    logic [31:0]      RAM[255:0];
+   wire unused_ = &{a[1:0], 1'b0};
    
    assign rd = RAM[a[31:2]]; // word aligned
    always_ff @(posedge clk)
