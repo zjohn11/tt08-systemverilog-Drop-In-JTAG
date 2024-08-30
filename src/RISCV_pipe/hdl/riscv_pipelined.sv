@@ -548,10 +548,14 @@ module dmem (input  logic        clk, we,
    
    logic [31:0]      RAM[255:0];
    wire unused_ = &{a[1:0], 1'b0};
-   
+
+   // verilator lint_off UNSIGNED
    assign rd = RAM[a[31:2]]; // word aligned
+   // verilator lint_on UNSIGNED
    always_ff @(posedge clk)
+      // verilator lint_off UNSIGNED
      if (we) RAM[a[31:2]] <= wd;
+     // verilator lint_on UNSIGNED
    
 endmodule // dmem
 
@@ -565,7 +569,9 @@ module alu(input  logic [31:0] a, b,
    logic            isAddSub;       // true when is add or sub
 
    assign condinvb = alucontrol[0] ? ~b : b;
+   // verilator lint_off UNSIGNED
    assign sum = a + condinvb + alucontrol[0];
+   // verilator lint_on UNSIGNED
    assign isAddSub = ~alucontrol[2] & ~alucontrol[1] |
                      ~alucontrol[1] &  alucontrol[0];
 
@@ -576,7 +582,9 @@ module alu(input  logic [31:0] a, b,
        3'b010:  result = a & b;       // and
        3'b011:  result = a | b;       // or
        3'b100:  result = a ^ b;       // xor
+        // verilator lint_off UNSIGNED
        3'b101:  result = sum[31] ^ v; // slt
+        // verilator lint_on UNSIGNED
        3'b110:  result = a << b[4:0]; // sll
        3'b111:  result = a >> b[4:0]; // srl
        default: result = 32'bx;
