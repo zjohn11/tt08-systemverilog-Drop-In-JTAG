@@ -21,7 +21,7 @@ project:
     - "RTL/bsr.sv"
     - "RTL/bypass_register.sv"
     - "RTL/defines.sv"
-    - "RTL/device_identification_register.sv"
+    #- "RTL/device_identification_register.sv"
     - "RTL/instruction_register.sv"
     - "RTL/jtag_test_logic.sv"
     - "RTL/tap_controller.sv"
