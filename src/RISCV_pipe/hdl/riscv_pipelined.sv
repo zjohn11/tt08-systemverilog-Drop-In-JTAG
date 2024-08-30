@@ -323,6 +323,7 @@ module datapath(input logic clk, reset,
                 output logic [4:0]  Rs1D, Rs2D, Rs1E, Rs2E,
                 output logic [4:0]  RdE, RdM, RdW);
 
+   wire unused = &{MemWriteM,1'b0};
    // Fetch stage signals
    logic [31:0]         PCNextF, PCPlus4F;
    // Decode stage signals
