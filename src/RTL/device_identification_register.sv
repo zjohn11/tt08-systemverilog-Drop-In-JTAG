@@ -13,7 +13,7 @@ localparam device_id = `DEVICE_ID;
 logic [32:0] shift_reg;
 assign tdo = shift_reg[0];
 
-always @(posedge captureDR) begin
+always @(posedge clockDR) begin
     shift_reg[32] <= tdi;
 end
     
