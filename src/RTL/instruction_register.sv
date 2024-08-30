@@ -43,7 +43,9 @@ always_comb begin
         `E_STEP           : decoded <= `D_STEP;
         `E_RESUME         : decoded <= `D_RESUME;
         `E_RESET          : decoded <= `D_RESET;
+        // verilator lint_off UNSIGNED
         default           : decoded <= 'bx;
+        // verilator lint_on UNSIGNED
     endcase
 end
 
