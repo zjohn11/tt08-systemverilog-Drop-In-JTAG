@@ -30,7 +30,7 @@ async def test_project(dut):
     # Set the input values you want to test
     dut.ui_in[0].value = 1
     dut.ui_in[1].value = 1
-    dut.ui_in[3].value = not rst_n
+    dut.ui_in[3].value = not dut.rst_n.value
 
     # Wait for 26 clock cycles to see the output values
     await ClockCycles(dut.clk, 26)
