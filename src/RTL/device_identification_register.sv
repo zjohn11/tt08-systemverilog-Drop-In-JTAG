@@ -1,7 +1,7 @@
 // See 1149.1 - 12.1.1 for details on providing optional USERCODE instruction support
 
 module device_identification_register (
-    `include "defines.sv"
+    `include "RTL/defines.sv"
 
     input tdi,
     input clockDR,
