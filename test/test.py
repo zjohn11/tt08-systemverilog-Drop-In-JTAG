@@ -12,7 +12,9 @@ async def test_project(dut):
 
     # Set the clock period to 10 us (100 KHz)
     clock = Clock(dut.clk, 10, units="us")
+    clock_sys = Clock(dut.ui_in[2], 10, units="us")
     cocotb.start_soon(clock.start())
+    cocotb.start_soon(clock_sys.start())
 
     # Reset
     dut._log.info("Reset")
@@ -28,7 +30,6 @@ async def test_project(dut):
     # Set the input values you want to test
     dut.ui_in[0].value = 1
     dut.ui_in[1].value = 1
-    dut.ui_in[2].value = Clock(dut.clk, 10, units="us")
     dut.ui_in[3].value = not rst_n
 
     # Wait for 26 clock cycles to see the output values
