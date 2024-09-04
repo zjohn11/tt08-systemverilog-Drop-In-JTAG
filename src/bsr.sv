@@ -1,4 +1,4 @@
-module bsr #(parameter WIDTH) (
+module bsr #(parameter WIDTH = 32) (
     input  clk,
     input  update_dr,
     input  shift_dr,
