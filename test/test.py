@@ -32,8 +32,8 @@ async def test_project(dut):
     dut.ui_in[1].value = 1
     dut.ui_in[3].value = not dut.rst_n.value
 
-    # Wait for 26 clock cycles to see the output values
-    await ClockCycles(dut.clk, 26)
+    # Wait for 52 clock cycles to see the output values
+    await ClockCycles(dut.clk, 52)
 
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
