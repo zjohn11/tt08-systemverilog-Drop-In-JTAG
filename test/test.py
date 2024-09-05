@@ -34,7 +34,7 @@ async def test_project(dut):
     dut.ui_in[1].value = 1
 
     while (1):
-        await ClockCycles(dut.ui_in[2], 1)
+        await ClockCycles(dut.clk, 1)
         if dut.MemWriteM == 1:
             if dut.DataAdrM == 100 and dut.WriteDataM == 25:
                 print("Simulation Succeeded")
