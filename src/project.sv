@@ -25,7 +25,7 @@ module tt_um_jtag (
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, ui_in[7:4], uio_in[7:0], 1'b0};
 
-    tt_um_jtag_top top(
+    tt_um_jtag_top #(.IMEM_INIT_FILE("riscvtest.mem")) top(
         .tck(clk),
         .tdi(ui_in[0]),
         .tms(ui_in[1]),
