@@ -25,16 +25,26 @@ async def test_project(dut):
     dut.ui_in[3].value = 1
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
+    dut.ui_in[3].value = 0
 
     dut._log.info("Test project behavior")
 
     # Set the input values you want to test
     dut.ui_in[0].value = 1
     dut.ui_in[1].value = 1
-    dut.ui_in[3].value = 0
 
+    while (1):
+        await ClockCycles(dut.ui_in[2], 1)
+        if dut.MemWriteM == 1:
+            if dut.DataAdrM == 100 and dut.WriteDataM == 25:
+                print("Simulation Succeeded")
+                break
+            elif dut.DataAdrM != 96:
+                print("Simulation Failed")
+                break
+    
     # Wait for 100 clock cycles to see the output values
-    await ClockCycles(dut.clk, 1000)
+    # await ClockCycles(dut.clk, 100)
 
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
