@@ -35,11 +35,11 @@ async def test_project(dut):
 
     while (1):
         await ClockCycles(dut.clk, 1)
-        if dut.MemWriteM == 1:
-            if dut.DataAdrM == 100 and dut.WriteDataM == 25:
+        if dut.top.MemWriteM == 1:
+            if dut.top.DataAdrM == 100 and dut.top.WriteDataM == 25:
                 print("Simulation Succeeded")
                 break
-            elif dut.DataAdrM != 96:
+            elif dut.top.DataAdrM != 96:
                 print("Simulation Failed")
                 break
     
