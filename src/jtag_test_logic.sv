@@ -107,14 +107,14 @@ bypass_register br (
     .tdo(tdo_br)
 );
 
-
+/*
 device_identification_register didr (
     .tdi(tdi_dr),
     .tdo(tdo_id),
     .clockDR(clk_dr || ~idcode),
     .captureDR(captureDR)
 );
-
+*/
 // BSR mux
 logic bsr_enable;
 assign bsr_enable = (sample_preload || extest || intest || clamp);
