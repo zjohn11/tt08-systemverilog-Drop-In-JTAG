@@ -30,7 +30,7 @@ wire unused = &{shiftIR, updateDRstate, 1'b0};
 
 // instruction signals
 logic [`INST_COUNT-1:0] instructions;
-//logic idcode;
+logic idcode;
 logic sample_preload;
 logic extest;
 logic intest;
@@ -87,7 +87,7 @@ instruction_register ir (
 
 
 // synth tool should recognize these as one-hot signals
-//assign idcode         = (instructions == `D_IDCODE);
+assign idcode         = (instructions == `D_IDCODE);
 assign sample_preload = (instructions == `D_SAMPLE_PRELOAD);
 assign extest         = (instructions == `D_EXTEST);
 assign intest         = (instructions == `D_INTEST);
@@ -107,14 +107,13 @@ bypass_register br (
     .tdo(tdo_br)
 );
 
-/*
 device_identification_register didr (
     .tdi(tdi_dr),
     .tdo(tdo_id),
     .clockDR(clk_dr || ~idcode),
     .captureDR(captureDR)
 );
-*/  
+    
 // BSR mux
 logic bsr_enable;
 assign bsr_enable = (sample_preload || extest || intest || clamp);
