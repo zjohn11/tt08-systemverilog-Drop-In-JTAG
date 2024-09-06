@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "Drop-In JTAG Debugger"      # Project title
-  author:       "Zach Johnson"      # Your name
+  author:       "Zach Johnson, Matthew Otto, Coleman Curtsinger, and Dr. James Stine"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "JTAG-Compliant Test Logic capable of testing integrated circuits."      # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
