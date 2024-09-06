@@ -46,7 +46,7 @@ logic logic_reset;
 logic tdi_ir, tdi_dr;
 logic tdo_ir, tdo_dr;
 logic tdo_br;
-//logic tdo_id;
+logic tdo_id;
 
 
 tap_controller fsm (
@@ -87,7 +87,7 @@ instruction_register ir (
 
 
 // synth tool should recognize these as one-hot signals
-assign idcode         = (instructions == `D_IDCODE);
+//assign idcode         = (instructions == `D_IDCODE);
 assign sample_preload = (instructions == `D_SAMPLE_PRELOAD);
 assign extest         = (instructions == `D_EXTEST);
 assign intest         = (instructions == `D_INTEST);
