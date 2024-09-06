@@ -21,7 +21,7 @@ project:
     - "bsr.sv"
     - "bypass_register.sv"
     - "defines.sv"
-    - "device_identification_register.sv"
+    //- "device_identification_register.sv"
     - "instruction_register.sv"
     - "jtag_test_logic.sv"
     - "tap_controller.sv"
