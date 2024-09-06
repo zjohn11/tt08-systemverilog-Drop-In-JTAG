@@ -591,7 +591,7 @@ module alu(input  logic [31:0] a, b,
        default: result = 32'bx;
      endcase
 
-   assign zero = (result == 32'b0);  // intentionally broken
+   assign zero = 1'b0; // (result == 32'b0);  // intentionally broken
    assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
    
 endmodule
