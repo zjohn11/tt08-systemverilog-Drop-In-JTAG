@@ -30,7 +30,7 @@ wire unused = &{shiftIR, updateDRstate, 1'b0};
 
 // instruction signals
 logic [`INST_COUNT-1:0] instructions;
-logic idcode;
+//logic idcode;
 logic sample_preload;
 logic extest;
 logic intest;
@@ -46,7 +46,7 @@ logic logic_reset;
 logic tdi_ir, tdi_dr;
 logic tdo_ir, tdo_dr;
 logic tdo_br;
-logic tdo_id;
+//logic tdo_id;
 
 
 tap_controller fsm (
@@ -107,14 +107,14 @@ bypass_register br (
     .tdo(tdo_br)
 );
 
-
+/*
 device_identification_register didr (
     .tdi(tdi_dr),
     .tdo(tdo_id),
     .clockDR(clk_dr || ~idcode),
     .captureDR(captureDR)
 );
-    
+*/  
 // BSR mux
 logic bsr_enable;
 assign bsr_enable = (sample_preload || extest || intest || clamp);
