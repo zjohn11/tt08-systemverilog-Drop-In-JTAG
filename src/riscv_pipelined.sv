@@ -127,6 +127,7 @@ module riscv_testbench();
      end
 endmodule
 */
+/*
 module riscv_top(input  logic        clk, reset, 
            output logic [31:0] WriteDataM, DataAdrM, 
            output logic        MemWriteM);
@@ -140,7 +141,7 @@ module riscv_top(input  logic        clk, reset,
    dmem dmem (clk, MemWriteM, DataAdrM, WriteDataM, ReadDataM);
    
 endmodule
-
+*/
 module riscv(input  logic        clk, reset,
              output logic [31:0] PCF,
              input logic [31:0]  InstrF,
