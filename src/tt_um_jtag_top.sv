@@ -2,7 +2,7 @@
 //  alongside example system logic and boundary scan register
 
 
-module tt_um_jtag_top #(parameter IMEM_INIT_FILE="Memory/riscvtest.mem") (    
+module tt_um_jtag_top #(parameter IMEM_INIT_FILE="../src/Memory/riscvtest.mem") (    
     // jtag logic
     (* mark_debug = "true" *) input tck,tdi,tms,trst,
     (* mark_debug = "true" *) output tdo,
