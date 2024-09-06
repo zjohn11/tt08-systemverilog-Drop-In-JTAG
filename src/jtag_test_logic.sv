@@ -46,7 +46,7 @@ logic logic_reset;
 logic tdi_ir, tdi_dr;
 logic tdo_ir, tdo_dr;
 logic tdo_br;
-logic tdo_id;
+//logic tdo_id;
 
 
 tap_controller fsm (
@@ -130,7 +130,7 @@ assign bsr_shift = shiftDR;
 always_comb begin
     unique0 case (instructions)
         `D_BYPASS          : tdo_dr <= tdo_br;
-        `D_IDCODE          : tdo_dr <= tdo_id;
+        //`D_IDCODE          : tdo_dr <= tdo_id;
         `D_SAMPLE_PRELOAD,
         `D_EXTEST,
         `D_INTEST,
